@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Detecting gender</title>
+
+        <link href="pic/icon.jpeg" rel="icon">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <script src="js/main.js"></script>
+
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+        <section class="main-wrapper">
+            <div class="modal-container" id="modal"></div>
+            <div class="main-container">
+                <div class="form-container">
+                    <h2 class="header-text">Mr. or Ms. ?</h2>
+                    <form name="find-gender" onsubmit="Submit(event)">
+                        <div class="name-container">
+                            <label for="name">Name: </label>
+                            <input id="name" class="text-input" 
+                                    maxlength="255" required
+                                    onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)"/>
+                        </div>
+                        <div class="gender-selection">
+                            <div class="gender-choice">
+                                <input type="radio" id="male" name="gender" value="Male" />
+                                <label for="male">Male</label>
+                            </div>
+
+                            <div class="gender-choice">
+                                <input type="radio" id="female" name="gender" value="Female" />
+                                <label for="Female">Female</label>
+                            </div>
+                        </div>
+                        <button class="customized-button" type="submit">Submit</button>
+                    </form>
+                    <button class="customized-button" type="button" onclick="Save(event)">Save</button>
+                </div>
+                <div class="result-container">
+                    <div class="prediction-container">
+                        <h2 class="header-text">Prediction</h2>
+                        <div class="result">
+                            <p class="info" id="gender"></p>
+                        </div>
+                        <div class="result">
+                            <p class="info" id="probability"></p>
+                        </div>
+                    </div>
+                    <div class="saved-result-container">
+                        <h2 class="header-text">Saved Answer</h2>
+                        <div class="saved-result">
+                            <p class="info" id="saved">Empty!</p>
+                            <button class="customized-button" type="button" onclick="Clear(event)">Clear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="footer">
+                Arman-kasaiyan _ 9731052 _ IE 
+            </div>
+        </footer>
+    </body>
+</html>

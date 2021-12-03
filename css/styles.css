@@ -1,0 +1,214 @@
+
+@font-face {
+    font-family: Times;
+    src: url('fonts/times.ttf');
+}
+@font-face {
+    font-family: Times bold;
+    src: url('fonts/Times New Romance-Bold.otf');
+}
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+body {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+h2, p {
+    margin: 0;
+}
+h2 {
+    color: #120075;
+    text-shadow: 0 0 2px #005e75;
+}
+.main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+.main-container {
+    width: 600px;
+    height: 400px;
+    overflow: auto;
+    
+    border-width: 1px;
+    border-color: transparent;
+    border-style: solid;
+    border-radius: 45px;
+
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+
+    box-shadow: 0 0  55px rgb(0, 204, 255);
+}
+.header-text {
+    font-family: Times bold;
+    font-size: 35px;
+    font-weight: 100;
+}
+.text-input {
+    font-family: Times;
+    border: 0.5px solid gray;
+    border-radius: 5px;
+    font-size: 25px;
+}
+input[type="radio"] {
+    margin: 0 15px;
+    display: grid;
+    place-content: center;
+}
+input[type="radio"]::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em black;
+}
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+.form-container {
+    width: 45%;
+    height: 100%;
+    overflow: auto;
+    padding: 0 10px;
+}
+.name-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    margin: 25px 0;
+}
+.gender-selection {
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    margin: 25px 0;
+}
+.gender-choice {
+    display: flex;
+    align-items: center;
+}
+.result-container {
+    width: 55%;
+    height: 100%;
+    padding: 0 10px;
+}
+.prediction-container {
+    width: 100%;
+    height: 40%;
+    margin: 5px;
+    overflow: auto;
+}
+.result {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0;
+    font-size: 25px;
+    height: 25px;
+}
+.saved-result {
+    height: 80px;
+    margin: 25px 0;
+    font-size: 25px;
+}
+.saved-result-container {
+    width: 100%;
+    height: 60%;
+    margin: 5px;
+    padding: 5px 10px;
+
+    border: 1px dashed gray;
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    flex-direction: column;
+}
+.saved-result {
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    flex-direction: column;
+}
+.info {
+    text-align: center;
+    width: 350px;
+    margin: 10px 0;
+}
+.modal-message {
+    font-size: 20px;
+    width: 600px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+}
+.customized-button {
+    font-family: Times;
+    cursor: pointer;
+    width: 100px;
+    height: 45px;
+    font-size: 25px;
+    border-radius: 5px;
+    margin: 10px;
+    border: 1px solid;
+    border-color: transparent;
+    background-color: rgb(112, 176, 219);
+    color: white;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+.customized-button:hover {
+    color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 40px 40px rgb(255,182,193) inset;
+}
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.9);
+    bottom: 0;
+    width: 100%;
+    height: 35px;
+    font-size: 20px;
+    color: black;
+}
+.modal-container {
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 35px;
+    width: 600px;
+    height: 30px;
+    padding: 10px 40px;
+    border-radius: 55px;
+    margin: 10px 0;
+    opacity: 0;
+    transition: all 0.5s ease-in;
+    background-color: rgb(255, 255, 255, 0.9);
+}
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
